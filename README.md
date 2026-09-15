@@ -24,8 +24,27 @@ to a real cluster, so engineers can practice production troubleshooting safely.
 
 [![DeployVault dashboard](media/dashboard.png)](media/deployvault-demo.mp4)
 
-The 40-second demo is recorded by Playwright and narrated with the high-quality
-Piper `en_US-ryan-high` male voice. Click the dashboard image to open the MP4.
+The 7-minute, 13-second full-feature walkthrough is recorded from the real app
+with Playwright and narrated with the high-quality Piper `en_US-ryan-high` male
+voice. Click the dashboard image to open the MP4.
+
+| Time | Chapter | Features demonstrated |
+|---:|---|---|
+| 0:00 | Welcome | Safe offline simulation and training workflow |
+| 0:24 | Dashboard | Readiness score, mastery bars, statistics, recommendations |
+| 0:57 | Incident bank | 46 scenarios, search, filters, difficulty, Smart Practice |
+| 1:30 | Incident lab | Symptoms, objectives, topology and suspected layer |
+| 1:57 | Terminal | kubectl output, suggestions, Tab completion and history |
+| 2:37 | Guidance | Progressive hints and score penalties |
+| 2:57 | Grading | Five-part rubric, resolution and weak-area weighting |
+| 3:28 | Retention | Runbook notes, Markdown export and case-study debrief |
+| 3:56 | Interview | Timer, speech support, grading and model answer |
+| 4:31 | Study | Spaced-repetition reveal and difficulty ratings |
+| 4:57 | Exam | Randomized ten-incident assessment |
+| 5:24 | Custom drills | In-app incident creation for team scenarios |
+| 5:51 | Progress | Local persistence, dashboard updates and reset |
+| 6:16 | Delivery | Desktop installers, Docker, GHCR, CI/CD and D2 maps |
+| 6:58 | Close | Complete practice-to-readiness workflow |
 
 ## Screenshots
 
@@ -74,24 +93,25 @@ Allow access from another device on your LAN:
 
 ## Initialize GitHub over SSH
 
+If `gh auth status` already shows that Git operations use SSH, no additional
+login or key setup is needed:
+
 ```bash
-gh auth login --hostname github.com --git-protocol ssh
+gh auth status
 ./scripts/init-github.sh
 ```
 
-The initializer uses an existing Ed25519 key or creates one at
-`$HOME/.ssh/id_ed25519`, registers its public key with GitHub when needed, tests
-the connection, and sets this SSH remote:
+The initializer uses the active GitHub CLI account and existing SSH key, then
+sets this remote:
 
 ```text
 git@github.com:iamrichmack111/deploy-vault.git
 ```
 
-To use another account, repository name, or key:
+To use another account or repository name:
 
 ```bash
 GITHUB_OWNER=your-account \
-DEPLOYVAULT_SSH_KEY="$HOME/.ssh/your_github_key" \
 ./scripts/init-github.sh your-repository-name
 ```
 
@@ -167,8 +187,9 @@ npm run demo:build
 ```
 
 The script downloads Playwright Chromium and Piper's `en_US-ryan-high` voice,
-captures the real application, produces screenshots, synthesizes narration, and
-exports `media/deployvault-demo.mp4`.
+synthesizes 15 narration chapters, measures their exact timing, captures the
+real application in sync, produces screenshots, and exports
+`media/deployvault-demo.mp4`.
 
 ## Project structure
 

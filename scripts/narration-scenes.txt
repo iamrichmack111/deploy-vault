@@ -1,0 +1,44 @@
+[welcome]
+Welcome to DeployVault, a complete Kubernetes readiness system built for hands-on troubleshooting, interview preparation, and repeatable incident practice. Everything runs locally, and every terminal response is simulated, so you can investigate realistic production failures without connecting to, or risking, a real cluster. This detailed walkthrough demonstrates each major feature from first launch through deployment.
+
+[dashboard]
+The readiness command center turns practice history into a clear training plan. The four headline cards show drills cleared, average score, total attempts, and remaining scenarios. Category mastery bars reveal whether networking, storage, scheduling, security, probes, resources, or other domains need attention. Recommended Next prioritizes unfinished scenarios and topics where previous answers were weak. The readiness percentage combines completion and response quality, giving you a useful measure instead of a simple activity count.
+
+[incident-bank]
+The incident bank contains forty-six practical Kubernetes scenarios covering pods, deployments, services, ingress, DNS, network policies, persistent storage, nodes, scheduling, R B A C, secrets, autoscaling, probes, disruption budgets, E T C D, and control-plane failures. Search narrows the bank immediately, while category and difficulty filters build a focused practice session. Smart Practice uses saved misses and completion history to select weak or unfinished areas more often.
+
+[lab-overview]
+The incident lab opens with the production symptom, category, difficulty, attempt count, and current score. The request-path map traces traffic from client through ingress, service, endpoint, pod, and container. The suspected layer is highlighted so learners can form a hypothesis without being handed the answer. Observed symptoms describe the available evidence, while mission objectives define what a strong response must accomplish.
+
+[terminal]
+The terminal accepts realistic kubectl investigation patterns but never executes commands against a cluster. Suggested commands provide a quick starting point, and each command returns scenario-specific output such as pod state, events, logs, rollout details, endpoint mappings, or resource data. Learners can also type commands directly. Tab completes supported commands, the arrow keys recall command history, help lists available commands, and clear resets the terminal. This trains a disciplined sequence: establish scope, inspect Kubernetes state, read events, compare logs, trace dependencies, and only then choose remediation.
+
+[hints]
+When the investigation stalls, progressive hints point toward the next useful check. Each hint costs ten points, which keeps guidance available without making it free. The live score records the tradeoff between independent diagnosis and assistance. Scores never collapse to zero, so every attempt remains a useful learning session.
+
+[grading]
+The root-cause workspace asks for more than a lucky diagnosis. A strong answer should name the investigation, exact commands, root cause, remediation, operational risk, verification, and prevention. The grader scores those five dimensions separately, then combines response quality with remaining incident points. Successful answers mark the drill complete and improve readiness. Weak answers increase the scenario's practice weight, ensuring Smart Practice brings that skill back until it sticks.
+
+[runbook]
+Every drill includes personal runbook notes. Save the commands, warning signs, recovery sequence, or explanation you would want during a real incident. Notes persist in the browser with training progress and can be exported as a Markdown runbook for a repository or knowledge base. The expandable case-study debrief connects the simulated failure to a realistic production situation, helping learners explain not only what to type, but why the failure occurred and how to prevent it.
+
+[interview]
+Interview mode converts any incident into a timed verbal prompt. The ninety-second clock encourages a concise structure: scope, evidence, commands, root cause, safe fix, verification, and prevention. You can type the response or use browser speech recognition when supported. Grade Answer applies the same practical rubric used in the lab. Reveal shows a strong model answer but costs twenty points, making it useful for coaching without rewarding memorization. This mode is designed for realistic technical screens and senior engineering interviews.
+
+[study]
+Study mode turns weak areas into spaced-repetition cards. First, reason through the incident without seeing the solution. Reveal Answer then shows the diagnosis and remediation together. Rate the card Hard, Good, or Easy. Hard increases its future practice weight, while Easy marks strong mastery. This creates a fast review loop for commands, failure signatures, and response structure between longer lab sessions.
+
+[exam]
+Exam mode creates a randomized ten-incident assessment. Each scenario has a sixty-second timer, no hints, and the same evidence-based scoring rubric. After every answer, the next incident opens automatically. At the end, DeployVault calculates the average and reports a pass or continued-training result. Because the pool is randomized, repeated exams test reasoning across domains rather than recall of a fixed question order.
+
+[custom]
+Custom Scenario lets teams extend the built-in incident bank without editing code. Enter a title, category, production brief, expected diagnosis, and remediation. The new drill appears immediately with a simulated investigation surface and remains available in that browser. This is useful for recreating internal postmortems, preparing for a company's stack, onboarding engineers, or turning a recent outage into a safe team exercise.
+
+[progress]
+Training state, scores, attempts, misses, notes, and custom incidents persist locally between sessions. Returning to the dashboard immediately reflects completed work and updated mastery. Clear Saved Progress provides an intentional reset for a new learner or a fresh training cycle, while exported runbooks remain outside the application. No account, database, or cloud service is required.
+
+[shipping]
+DeployVault is deliberately lightweight. Python three starts the local server with zero runtime packages. The operating-system-aware installer creates a desktop application and native icon on mac O S, Linux, or Windows. The included non-root Dockerfile produces a small production image. GitHub Actions validate Python and JavaScript, start the server, run an A P I smoke test, verify all forty-six drills, and publish multi-architecture A M D sixty-four and Arm sixty-four images to the GitHub Container Registry. Editable D two diagrams document application architecture, training flow, and delivery.
+
+[close]
+That is the complete DeployVault workflow: choose a weak area, investigate safely, explain the failure, practice the interview answer, retain the lesson, and measure readiness. Break production safely, and learn to restore it confidently.

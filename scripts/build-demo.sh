@@ -11,7 +11,14 @@ fi
 python3 -c 'import piper' >/dev/null 2>&1 || python3 -m pip install --user piper-tts
 npm install
 npx playwright install chromium
+python3 scripts/synthesize-narration.py \
+  --model "$voice" --config "$voice.json" \
+  --scenes scripts/narration-scenes.txt \
+  --output demo-artifacts/narration.wav \
+  --timeline demo-artifacts/scene-durations.json
 node scripts/capture-demo.mjs
-python3 -m piper --model "$voice" --config "$voice.json" --length-scale 1.08 --sentence-silence 0.18 --output_file demo-artifacts/narration.wav < scripts/narration.txt
-ffmpeg -y -stream_loop -1 -i media/deployvault-demo-raw.webm -i demo-artifacts/narration.wav -shortest -af volume=-1.5dB -c:v libx264 -preset medium -crf 22 -pix_fmt yuv420p -c:a aac -b:a 160k -movflags +faststart media/deployvault-demo.mp4
+ffmpeg -y -i media/deployvault-demo-raw.webm -i demo-artifacts/narration.wav \
+  -shortest -af volume=-1.5dB -c:v libx264 -preset medium -crf 25 \
+  -pix_fmt yuv420p -c:a aac -b:a 160k -movflags +faststart \
+  media/deployvault-demo.mp4
 echo "Created media/deployvault-demo.mp4"
