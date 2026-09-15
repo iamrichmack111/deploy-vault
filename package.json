@@ -1,0 +1,16 @@
+{
+  "name": "deploy-vault",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Zero-install Kubernetes incident simulator, interview trainer, and readiness dashboard.",
+  "keywords": ["kubernetes","devops","kubectl","sre","platform-engineering","interview-prep","incident-response","training-simulator"],
+  "author": "Nicholas Jeremy Franklin",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --check static/app.js && python3 -m py_compile app.py",
+    "demo:capture": "node scripts/capture-demo.mjs",
+    "demo:build": "bash scripts/build-demo.sh"
+  },
+  "devDependencies": {"playwright": "^1.55.0"}
+}
+

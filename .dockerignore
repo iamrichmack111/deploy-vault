@@ -1,0 +1,11 @@
+.git
+.github
+node_modules
+demo-artifacts
+scripts
+desktop
+docs
+media/*.webm
+__pycache__
+*.pyc
+

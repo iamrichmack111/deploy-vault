@@ -1,0 +1,25 @@
+name: CI
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - uses: actions/setup-node@v4
+        with: {node-version: "22"}
+      - name: Validate application
+        run: npm test
+      - name: Smoke test server
+        run: |
+          python3 app.py --no-browser --port 8080 &
+          server_pid=$!
+          trap 'kill $server_pid' EXIT
+          for i in {1..30}; do curl -fsS http://127.0.0.1:8080/api/health && break; sleep 1; done
+          test "$(curl -fsS http://127.0.0.1:8080/api/drills | python3 -c 'import json,sys; print(len(json.load(sys.stdin)))')" = "46"
+

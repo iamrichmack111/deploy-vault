@@ -1,0 +1,11 @@
+direction: right
+user: Learner { shape: person }
+browser: DeployVault UI { shape: rectangle; style.fill: "#10232d" }
+server: Python Microserver { shape: hexagon; style.fill: "#0b1820" }
+bank: 46 Incident Bank { shape: cylinder; style.fill: "#10232d" }
+progress: Browser Progress { shape: cylinder; style.fill: "#10232d" }
+user -> browser: practice
+browser -> server: HTTP / API
+server -> bank: load JSON
+browser -> progress: scores + notes
+
