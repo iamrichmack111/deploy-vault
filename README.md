@@ -17,12 +17,24 @@ DeployVault is an offline-capable Kubernetes incident simulator, interview train
 and readiness dashboard. It provides realistic command output without connecting
 to a real cluster, so engineers can practice production troubleshooting safely.
 
+## Documentation
+
+The [complete DeployVault Wiki](https://github.com/iamrichmack111/deploy-vault/wiki)
+contains illustrated guides for every training mode, all incident categories,
+architecture, installation, containers, CI/CD, demo production, and troubleshooting.
+
+Publish or update it over SSH with:
+
+```bash
+./scripts/publish-wiki.sh
+```
+
 **Tags:** `kubernetes` · `devops` · `sre` · `kubectl` · `incident-response` ·
 `platform-engineering` · `interview-prep` · `training-simulator`
 
 ## Demo
 
-[![DeployVault dashboard](media/dashboard-demo.png)](media/deployvault-demo.mp4)
+[![DeployVault dashboard](media/wiki-dashboard.png)](media/deployvault-demo.mp4)
 
 The 7-minute, 13-second full-feature walkthrough is recorded from the real app
 with Playwright and narrated with the high-quality Piper `en_US-ryan-high` male
