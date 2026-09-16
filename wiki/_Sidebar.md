@@ -22,6 +22,6 @@
 - [Installation and Desktop](Installation-and-Desktop)
 - [Containers, GHCR and CI/CD](Containers-GHCR-and-CI-CD)
 - [Demo and Media](Demo-and-Media)
+- [Roadmap and Releases](Roadmap-and-Releases)
 - [Troubleshooting](Troubleshooting)
 - [Contributing](Contributing)
-

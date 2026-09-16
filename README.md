@@ -23,6 +23,15 @@ The [complete DeployVault Wiki](https://github.com/iamrichmack111/deploy-vault/w
 contains illustrated guides for every training mode, all incident categories,
 architecture, installation, containers, CI/CD, demo production, and troubleshooting.
 
+See the [Changelog](CHANGELOG.md), [Development History](docs/DEVELOPMENT-HISTORY.md),
+and [future roadmap](https://github.com/iamrichmack111/deploy-vault/issues?q=is%3Aissue+label%3Aroadmap).
+
+Publish the detailed future-improvement backlog as GitHub Issues:
+
+```bash
+./scripts/publish-roadmap-issues.sh
+```
+
 Publish or update it over SSH with:
 
 ```bash
