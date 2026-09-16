@@ -22,7 +22,7 @@ to a real cluster, so engineers can practice production troubleshooting safely.
 
 ## Demo
 
-[![DeployVault dashboard](media/dashboard.png)](media/deployvault-demo.mp4)
+[![DeployVault dashboard](media/dashboard-demo.png)](media/deployvault-demo.mp4)
 
 The 7-minute, 13-second full-feature walkthrough is recorded from the real app
 with Playwright and narrated with the high-quality Piper `en_US-ryan-high` male
