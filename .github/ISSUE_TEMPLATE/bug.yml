@@ -1,0 +1,56 @@
+name: Bug report
+description: Report a reproducible problem in DeployVault
+title: "Bug: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping improve DeployVault. Do not include credentials, kubeconfig content, or confidential incident data.
+  - type: input
+    id: version
+    attributes:
+      label: DeployVault version or commit
+      placeholder: v1.1.0 or commit SHA
+    validations:
+      required: true
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      options:
+        - macOS portable
+        - macOS desktop app
+        - Linux portable
+        - Linux desktop app
+        - Windows desktop app
+        - Docker or GHCR
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: What happened?
+      description: Include the expected behavior and actual behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      placeholder: "1. Start...\n2. Open...\n3. Select..."
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Relevant logs or screenshots
+      render: shell
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed tokens, credentials, internal addresses, and confidential data.
+          required: true
+
